@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../python_workspace"
+		},
+		{
+			"path": "../python_workspace"
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.windows": {
+			"PYTHONPATH": "${workspaceFolder:../python_workspace};${workspaceFolder:../python_workspace}"
+		}
+	}
+}
