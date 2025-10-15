@@ -1,9 +1,9 @@
 import sys
 from PySide6.QtWidgets import QApplication
-from UI.main_UI import ProcessDataUI
+from UI.main_UI import MainWindow
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = ProcessDataUI(parent=None)
+    window = MainWindow()
     window.show()
     sys.exit(app.exec())
