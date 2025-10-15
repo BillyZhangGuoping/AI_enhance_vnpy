@@ -60,7 +60,6 @@ class ProcessDataUI(QWidget):
 
     def close_ui(self):
         self.hide()
-        self.parent().show()
 
 class MainWindow(QWidget):
     def __init__(self):

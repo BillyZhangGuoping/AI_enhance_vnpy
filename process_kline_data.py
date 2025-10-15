@@ -27,7 +27,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     # 处理缺失值（线性插值）
     df = df.infer_objects(copy=False)
-    df = df.interpolate(method='linear')
+    df = df.infer_objects(copy=False).interpolate()
     
     # 去除异常值（3σ原则）
     numeric_cols = ['open', 'high', 'low', 'close', 'volume']
@@ -111,7 +111,7 @@ def save_to_parquet(df: pd.DataFrame, input_path: str):
     """
     # 提取文件名（不带扩展名）
     file_name = os.path.splitext(os.path.basename(input_path))[0]
-    output_path = f"./data/{file_name}_processed_data.parquet"
+    output_path = f"./processed_data/{file_name}_processed_data.parquet"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df.to_parquet(output_path, index=False)
 
@@ -150,11 +150,11 @@ def main():
     
     # 保存为Parquet文件
     save_to_parquet(df, csv_path)
-    print(f"数据已保存到 ./data/{os.path.splitext(os.path.basename(csv_path))[0]}_processed_data.parquet")
+    print(f"数据已保存到 ./processed_data/{os.path.splitext(os.path.basename(csv_path))[0]}_processed_data.parquet")
     
     # 保存为CSV文件
     save_to_csv(df, csv_path)
-    print(f"数据已保存到 ./data/{os.path.splitext(os.path.basename(csv_path))[0]}_processed_data.csv")
+    print(f"数据已保存到 ./processed_data/{os.path.splitext(os.path.basename(csv_path))[0]}_processed_data.csv")
 
 if __name__ == "__main__":
     main()
