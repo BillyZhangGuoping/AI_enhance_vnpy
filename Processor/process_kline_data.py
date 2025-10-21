@@ -131,7 +131,7 @@ def save_to_csv(df: pd.DataFrame, input_path: str):
 # 主函数
 def main():
     # CSV文件路径
-    csv_path = "./future_data/fu2601_1M.csv"
+    csv_path = "c:\\python_workspace\\future_data\\fu2601_1M.csv"
     
     # 加载数据
     df = load_data_from_csv(csv_path)
